@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="viewModel"
+                  type="com.egs.demo_zsports.features.athletes.viewmodel.AthleteViewModel"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:tools="http://schemas.android.com/tools"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 tools:context=".features.athletes.views.fragments.AthleteFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_item_athletes"
+                android:layout_alignParentTop="true"
+                android:layout_above="@+id/bottombar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                tools:listitem="@layout/rv_item_athletes"
+                app:itemAthleteAdapter="@{viewModel.adapter}">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <include
+                android:id="@+id/bottombar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/navigation_bottombar"
+                android:layout_alignParentBottom="true"
+        />
+
+    </RelativeLayout>
+
+</layout>

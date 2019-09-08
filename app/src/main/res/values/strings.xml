@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">demo-zsports</string>
+    <string name="title">ZSPORTS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_in_title">Iniciar sesión</string>
+    <string name="log_in_button_text">Ingresar</string>
+    <string name="button_create_account">Crear cuenta nueva</string>
+    <string name="hint_email">Ingresar e-mail</string>
+    <string name="hint_password">Ingresar contraseña</string>
+
+    <string name="view_schedule">Ver horario</string>
+    <string name="process_dialog_text">Procesando...</string>
+
+
+</resources>

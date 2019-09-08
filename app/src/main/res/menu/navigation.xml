@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigation_assistance"
+            android:icon="@drawable/ic_schedule_black_24dp"
+            android:title="Asistencia"/>
+
+    <item
+            android:id="@+id/navigation_logout"
+            android:icon="@drawable/ic_lock"
+            android:title="Cerrar sesión"/>
+
+    <!--<item-->
+            <!--android:id="@+id/navigation_artists"-->
+            <!--android:icon="@drawable/ic_person"-->
+            <!--android:title="Artists"/>-->
+
+</menu>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="viewModel"
+                  type="com.egs.demo_zsports.features.athletes.viewmodel.AthleteViewModel"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:background="#CC000000"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <TextView
+                style="@style/PrimaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asistencia"
+                android:gravity="center"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_item_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="6"
+                tools:listitem="@layout/rv_item_schedule"
+                app:itemScheduleAdapter="@{viewModel.scheduleAdapter}">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:tint="@color/colorPrimary"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_close"
+                android:onClick="@{ () -> viewModel.closeScheduleDialog() }"/>
+
+    </LinearLayout>
+
+</layout>

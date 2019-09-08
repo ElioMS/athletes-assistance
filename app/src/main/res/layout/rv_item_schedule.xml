@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable name="assistance"
+                  type="com.egs.demo_zsports.model.Assistance"/>
+
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/rv_schedule_container"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/bg_item_athletes"
+                  android:padding="20dp"
+                  android:layout_margin="10dp"
+                  android:weightSum="3">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@{assistance.date}"
+                  android:layout_weight="1"
+                  android:gravity="center"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@{assistance.activity}"
+                  android:layout_weight="1"
+                  android:gravity="center"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@{assistance.assistance}"
+                  android:layout_weight="1"
+                  android:gravity="center"/>
+
+    </LinearLayout>
+</layout>
