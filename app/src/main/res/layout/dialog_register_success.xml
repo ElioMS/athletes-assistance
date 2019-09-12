@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+        <TextView
+                style="@style/AccentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro exitoso!"
+                android:gravity="center"
+                android:textSize="35sp"
+                android:fontFamily="@font/muli_bold"
+                android:layout_gravity="center"/>
+
+        <TextView
+                style="@style/PrimaryText"
+                android:layout_margin="30dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Un correo de confirmación ha sido enviado a su cuenta"/>
+
+        <TextView
+                android:id="@+id/btn_close_dialog"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volver al login"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

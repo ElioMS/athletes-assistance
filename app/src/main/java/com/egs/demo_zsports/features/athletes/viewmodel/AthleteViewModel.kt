@@ -11,13 +11,18 @@ import com.egs.demo_zsports.model.Assistance
 import com.egs.demo_zsports.model.Athlete
 import com.egs.demo_zsports.room.repository.*
 import com.egs.demo_zsports.ui.base.BaseViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.logging.Handler
+import kotlin.collections.ArrayList
 
 class AthleteViewModel: BaseViewModel<AthleteNavigator>() {
 
     val adapter = ItemAthleteAdapter(arrayListOf()) {
         model, position -> showProfile(model, position)
     }
+
+    val today = ObservableField<String>()
 
     val scheduleAdapter = ItemScheduleAdapter(arrayListOf())
 
@@ -31,14 +36,16 @@ class AthleteViewModel: BaseViewModel<AthleteNavigator>() {
 
     var isLoading = ObservableField<Boolean>()
     var showScheduleDialog = ObservableField<Boolean>()
+    var scheduleData = ObservableField<Int>(0)
 
     init {
         loadAthletes()
+
         isLoading.set(false)
         showScheduleDialog.set(false)
     }
 
-    private fun loadAthletes() {
+    fun loadAthletes() {
         athletesRepository.getAthletes(1, object: OnAthletesReadyCallback {
             override fun onDataReady(data: ArrayList<Athlete>) {
                 athletes.value = data
@@ -70,6 +77,7 @@ class AthleteViewModel: BaseViewModel<AthleteNavigator>() {
                 scheduleAdapter.bindItems(data)
                 isLoading.set(false)
                 showScheduleDialog.set(true)
+                scheduleData.set(data.size)
             }
         })
     }

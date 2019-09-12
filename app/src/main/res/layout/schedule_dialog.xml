@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
+        <import type="android.view.View"></import>
         <variable name="viewModel"
                   type="com.egs.demo_zsports.features.athletes.viewmodel.AthleteViewModel"/>
     </data>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:tools="http://schemas.android.com/tools"
                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                  android:background="#CC000000"
+                  android:background="#CCFFFFFF"
                   android:orientation="vertical"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent">
 
         <TextView
+                android:id="@+id/title"
                 style="@style/PrimaryText"
+                android:fontFamily="@font/muli_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Asistencia"
+                android:layout_marginTop="65dp"
+                android:layout_marginBottom="20dp"
+                android:layout_alignParentTop="true"
                 android:gravity="center"/>
 
+        <TextView
+                android:layout_below="@+id/title"
+                android:layout_centerInParent="true"
+                android:visibility="@{ viewModel.scheduleData == 0 ?  View.VISIBLE : View.GONE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_bold"
+                android:text="Sin participación."/>
+
         <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/title"
                 android:id="@+id/rv_item_schedule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,6 +46,8 @@
         </androidx.recyclerview.widget.RecyclerView>
 
         <androidx.appcompat.widget.AppCompatImageView
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 android:layout_width="50dp"
                 android:layout_height="100dp"
                 android:tint="@color/colorPrimary"
@@ -37,6 +55,6 @@
                 app:srcCompat="@drawable/ic_close"
                 android:onClick="@{ () -> viewModel.closeScheduleDialog() }"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </layout>

@@ -19,6 +19,6 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun initEvents() {
         nv_profile.visibility = View.GONE
-        nv_back.setOnClickListener { NavigationHelper.redirectTo(this, AthletesActivity::class.java) }
+        nv_back.setOnClickListener { onBackPressed() }
     }
 }

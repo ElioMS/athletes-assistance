@@ -21,15 +21,6 @@ class AthletesActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.main_container, AthleteFragment(), "AthleteFragment")
         fragmentTransaction.commit()
 
-        initEvents()
-
-
     }
-
-    private fun initEvents() {
-        nv_back.visibility = View.GONE
-        nv_profile.setOnClickListener { NavigationHelper.redirectTo(this, ProfileActivity::class.java) }
-    }
-
 
 }

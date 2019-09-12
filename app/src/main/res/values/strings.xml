@@ -8,6 +8,10 @@
     <string name="button_create_account">Crear cuenta nueva</string>
     <string name="hint_email">Ingresar e-mail</string>
     <string name="hint_password">Ingresar contraseña</string>
+    <string name="hint_name">Ingresar nombres y apellidos </string>
+    <string name="button_register">Registrar</string>
+    <string name="privacy_text">He leído los terminos y políticas de privacidad.</string>
+
 
     <string name="view_schedule">Ver horario</string>
     <string name="process_dialog_text">Procesando...</string>
